@@ -52,7 +52,7 @@ if st.button("حساب"):
     st.write(f"نسبة الدهون التقريبية في الجسم: {body_fat:.2f}%")
     
     try:
-        meals_df = pd.read_excel('meal_plans_3_systems_100_each.xlsx')
+        meals_df = pd.read_excel(r'C:\Users\User\Desktop\New folder\Data\meal_plans_3_systems_100_each.xlsx')
         system_map = {'زيادة وزن': 'تضخيم', 'نقصان وزن': 'تنشيف', 'ثبات وزن': 'وزن ثابت'}
         selected_system = system_map.get(goal)
         filtered_meals = meals_df[meals_df['النظام'] == selected_system]
@@ -62,8 +62,10 @@ if st.button("حساب"):
         st.error(f"خطأ في تحميل ملف الوجبات: {e}")
         
     try:
-        training_df = pd.read_excel('workout_plans_100_systems.xlsx')
+        training_df = pd.read_excel(r'C:\Users\User\Desktop\New folder\Data\workout_plans_100_systems.xlsx')
         st.write("نماذج أنظمة التدريب:")
         st.write(training_df.head(10))
     except Exception as e:
         st.error(f"خطأ في تحميل ملف أنظمة التدريب: {e}")
+
+     
